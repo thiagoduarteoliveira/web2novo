@@ -1,30 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastro de Usuário</title>
-</head>
+<?php
 
-<body>
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    <h1>Cadastro de Usuário</h1>
+    // Recebe o nome digitado no formulário
+    $nome = $_POST["nome"];
 
-    <p>Preencha os dados abaixo:</p>
+    // Mostra o nome recebido
+    echo "<h2>Dado recebido</h2>";
+    echo "Nome: " . $nome;
+}
 
-    <form>
+?>
 
-        <label>Nome:</label><br>
-        <input type="text" name="nome"><br><br>
+<!-- Formulário -->
+<form method="POST">
 
-        <label>E-mail:</label><br>
-        <input type="email" name="email"><br><br>
+    <label>Nome:</label><br>
+    <input type="text" name="nome"><br><br>
 
-        <label>Telefone:</label><br>
-        <input type="text" name="telefone"><br><br>
+    <button type="submit">Cadastrar</button>
 
-        <button type="submit">Cadastrar</button>
-
-    </form>
-
-</body>
-</html>
+</form>
